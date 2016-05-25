@@ -1,3 +1,10 @@
+<html>
+	<header>
+		<meta charset="UTF-8">
+	</header>
+	<body>
+
+
 <?php
 
 require "Include/Config.php";
@@ -109,5 +116,8 @@ $membros = $stmt->fetchAll(\PDO::FETCH_ASSOC);
 	</div>
  </div>
 <?php endforeach ?>
-
+<a href="Menu.php" class="btn btn-info" role="button">Voltar</a>
 <div class="print"> <h1> Para imprimir Ctrl + P </h1> </div>
+
+ </body>
+ </html>

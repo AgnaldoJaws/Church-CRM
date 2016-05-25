@@ -20,7 +20,7 @@ require "Include/CanvassUtilities.php";
 require "Include/GeoCoder.php";
 
 //Set the page title
-$sPageTitle = gettext("Family Editor");
+$sPageTitle = gettext("Editor de Família");
 
 $iFamilyID = -1;
 
@@ -653,16 +653,16 @@ require "Include/Header.php";
 	<input type="hidden" name="FamCount" value="<?= $iFamilyMemberRows ?>">
 	<div class="box box-info clearfix">
 		<div class="box-header">
-			<h3 class="box-title"><?= gettext("Family Info") ?></h3>
+			<h3 class="box-title"><?= gettext("Informações da Família") ?></h3>
 			<div class="pull-right"><br/>
-				<input type="submit" class="btn btn-primary" value="<?= gettext("Save") ?>" name="FamilySubmit"  class="form-control">
+				<input type="submit" class="btn btn-primary" value="<?= gettext("Salvar") ?>" name="FamilySubmit"  class="form-control">
 			</div>
 		</div><!-- /.box-header -->
 		<div class="box-body">
 			<div class="form-group">
 				<div class="row">
 					<div class="col-xs-3">
-						<label><?= gettext("Family Name:") ?></label>
+						<label><?= gettext("Nome da Família:") ?></label>
 						<input type="text" Name="Name" id="FamilyName" value="<?= htmlentities(stripslashes($sName), ENT_NOQUOTES, "UTF-8") ?>" maxlength="48"  class="form-control">
 						<?php if ($sNameError) { ?><font color="red"><?= $sNameError ?></font><?php } ?>
 					</div>
@@ -670,100 +670,55 @@ require "Include/Header.php";
 				<p/>
 				<div class="row">
 					<div class="col-xs-6">
-						<label><?= gettext("Address1:") ?></label>
+						<label><?= gettext("Edereço 1:") ?></label>
 							<input type="text" Name="Address1" value="<?= htmlentities(stripslashes($sAddress1), ENT_NOQUOTES, "UTF-8") ?>" size="50" maxlength="250"  class="form-control">
 					</div>
 					<div class="col-xs-3">
-						<label><?= gettext("Address2:") ?></label>
+						<label><?= gettext("Edereço 2:") ?></label>
 						<input type="text" Name="Address2" value="<?= htmlentities(stripslashes($sAddress2), ENT_NOQUOTES, "UTF-8") ?>" size="50" maxlength="250"  class="form-control">
 					</div>
 					<div class="col-xs-3">
-						<label><?= gettext("City:") ?></label>
+						<label><?= gettext("Cidade:") ?></label>
 						<input type="text" Name="City" value="<?= htmlentities(stripslashes($sCity), ENT_NOQUOTES, "UTF-8") ?>" maxlength="50"  class="form-control">
 					</div>
 				</div>
 				<p/>
-				<div class="row">
-					<div class="form-group col-xs-2">
-						<label for="StatleTextBox">
-						<?php
-						if($sCountry == "Canada") {
-							echo gettext("Province:");
-						}else{
-							echo gettext("State:");
-						} ?>
-						</label>
-						<?php require "Include/StateDropDown.php"; ?>
-					</div>
-					<div class="form-group col-xs-2">
-						<label><?= gettext("None US/CND State:") ?></label>
-						<input type="text"  class="form-control" name="StateTextbox" value="<?php if ($sCountry != "United States" && $sCountry != "Canada") echo htmlentities(stripslashes($sState),ENT_NOQUOTES, "UTF-8"); ?>" size="20" maxlength="30">
-					</div>
-					<div class="form-group col-xs-2">
-						<label> <?php if($sCountry == "Canada")
-							  echo gettext("Postal Code:");
-							else
-							  echo gettext("Zip:");
-							?></label>
-						<input type="text" Name="Zip"  class="form-control" <?php
-							// bevand10 2012-04-26 Add support for uppercase ZIP - controlled by administrator via cfg param
-							if($cfgForceUppercaseZip)echo 'style="text-transform:uppercase" ';
-							echo 'value="' . htmlentities(stripslashes($sZip), ENT_NOQUOTES, "UTF-8") . '" '; ?>
-							maxlength="10" size="8">
-					</div>
-					<div class="form-group col-xs-2">
-						<label> <?= gettext("Country:") ?></label>
-						<?php require "Include/CountryDropDown.php" ?>
-					</div>
-				</div>
-				<?php if (!$bHideLatLon) { /* Lat/Lon can be hidden - General Settings */
-					if (!$bHaveXML) { // No point entering if values will just be overwritten ?>
-				<div class="row">
-					<div class="form-group col-xs-2">
-						<label><?= gettext("Latitude:") ?></label>
-						<input type="text" class="form-control" Name="Latitude" value="<?= $nLatitude ?>" size="30" maxlength="50">
-					</div>
-					<div class="form-group col-xs-2">
-						<label><?= gettext("Longitude:") ?></label>
-						<input type="text" class="form-control" Name="Longitude" value="<?= $nLongitude ?>" size="30" maxlength="50">
-					</div>
-				</div>
-				<?php	}
-					} /* Lat/Lon can be hidden - General Settings */ ?>
+				
+				
 			</div>
 		</div>
 	</div>
 	<div class="box box-info clearfix">
 		<div class="box-header">
-			<h3 class="box-title"><?= gettext("Contact Info") ?></h3>
+			<h3 class="box-title"><?= gettext("Informações de Contato") ?></h3>
 			<div class="pull-right"><br/>
-				<input type="submit" class="btn btn-primary" value="<?= gettext("Save") ?>" name="FamilySubmit" >
+				<input type="submit" class="btn btn-primary" value="<?= gettext("Salvar") ?>" name="FamilySubmit" >
 			</div>
 		</div><!-- /.box-header -->
 		<div class="box-body">
 			<div class="row">
 				<div class="form-group col-xs-3">
-					<label><?= gettext("Home Phone:") ?></label>
+					<label><?= gettext("Telefone Residêncial:") ?></label>
 					<div class="input-group">
 						<div class="input-group-addon">
 							<i class="fa fa-phone"></i>
 						</div>
 						<input type="text" Name="HomePhone" value="<?= htmlentities(stripslashes($sHomePhone)) ?>" size="30" maxlength="30" class="form-control" data-inputmask='"mask": "(999) 999-9999"' data-mask>
-						<input type="checkbox" name="NoFormat_HomePhone" value="1" <?php if ($bNoFormat_HomePhone) echo " checked";?>><?= gettext("Do not auto-format") ?>
+						<input type="checkbox" name="NoFormat_HomePhone" value="1" <?php if ($bNoFormat_HomePhone) echo " checked";?>><?= gettext("Não Autoformatado") ?>
 					</div>
 				</div>
 				<div class="form-group col-xs-3">
-					<label><?= gettext("Work Phone:") ?></label>
+					<label><?= gettext("Telefone do Trabalho:") ?></label>
 					<div class="input-group">
 						<div class="input-group-addon">
 							<i class="fa fa-phone"></i>
 						</div>
 						<input type="text" name="WorkPhone" value="<?= htmlentities(stripslashes($sWorkPhone)) ?>" size="30" maxlength="30" class="form-control" data-inputmask="'mask': ['999-999-9999 [x99999]', '+099 99 99 9999[9]-9999']" data-mask/>
-						<input type="checkbox" name="NoFormat_WorkPhone" value="1" <?= $bNoFormat_WorkPhone ? " checked" : ''?>><?= gettext("Do not auto-format") ?>
+						<input type="checkbox" name="NoFormat_WorkPhone" value="1" <?= $bNoFormat_WorkPhone ? " checked" : ''?>><?= gettext("Não Formatad") ?>
 					</div>
 				</div>
 				<div class="form-group col-xs-3">
-					<label><?= gettext("Mobile Phone:") ?></label>
+					<label><?= gettext("Celular:") ?></label>
 					<div class="input-group">
 						<div class="input-group-addon">
 							<i class="fa fa-phone"></i>
@@ -785,7 +740,7 @@ require "Include/Header.php";
 				</div>
 				<?php if (!$bHideFamilyNewsletter) { /* Newsletter can be hidden - General Settings */ ?>
 				<div class="form-group col-xs-4">
-					<label><?= gettext("Send Newsletter:") ?></label><br/>
+					<label><?= gettext("Enviar Novidades:") ?></label><br/>
 					<input type="checkbox" Name="SendNewsLetter" value="1" <?php if ($bSendNewsLetter) echo " checked"; ?>>
 				</div>
 				<?php } ?>
@@ -794,9 +749,9 @@ require "Include/Header.php";
 	</div>
 	<div class="box box-info clearfix">
 		<div class="box-header">
-			<h3 class="box-title"><?= gettext("Other Info") ?></h3>
+			<h3 class="box-title"><?= gettext("Outras Infomrações") ?></h3>
 			<div class="pull-right"><br/>
-				<input type="submit" class="form-control" class="btn btn-primary" value="<?= gettext("Save") ?>" name="FamilySubmit">
+				<input type="submit" class="form-control" class="btn btn-primary" value="<?= gettext("Salvar") ?>" name="FamilySubmit">
 			</div>
 		</div><!-- /.box-header -->
 		<div class="box-body">
@@ -804,7 +759,7 @@ require "Include/Header.php";
 				if ($dWeddingDate == "0000-00-00" || $dWeddingDate == "NULL") $dWeddingDate = ""; ?>
 				<div class="row">
 					<div class="form-group col-xs-4">
-						<label><?= gettext("Wedding Date:") ?></label>
+						<label><?= gettext("Data do casamento:") ?></label>
 						<input type="text" class="form-control" Name="WeddingDate" value="<?= $dWeddingDate ?>" maxlength="12" id="WeddingDate" size="15">
 						<?php if ($sWeddingDateError) { ?> <span style="color: red"><br/><?php $sWeddingDateError ?></span> <?php } ?>
 					</div>
@@ -858,7 +813,7 @@ require "Include/Header.php";
 		<div class="box-header">
 			<h3><?= gettext("Envelope Info") ?></h3>
 			<div class="pull-right"><br/>
-				<input type="submit" class="form-control" class="btn btn-primary" value="<?= gettext("Save") ?>" name="FamilySubmit">
+				<input type="submit" class="form-control" class="btn btn-primary" value="<?= gettext("Salvar") ?>" name="FamilySubmit">
 			</div>
 		</div><!-- /.box-header -->
 		<div class="box-body">
@@ -876,7 +831,7 @@ require "Include/Header.php";
 		<div class="box-header">
 			<h3 class="box-title"><?= gettext("Custom Fields") ?></h3>
 			<div class="pull-right"><br/>
-				<input type="submit" class="btn btn-primary" value="<?= gettext("Save") ?>" name="FamilySubmit">
+				<input type="submit" class="btn btn-primary" value="<?= gettext("Salvar") ?>" name="FamilySubmit">
 			</div>
 		</div><!-- /.box-header -->
 		<div class="box-body">
@@ -901,9 +856,9 @@ require "Include/Header.php";
 	<?php } ?>
 	<div class="box box-info clearfix">
 		<div class="box-header">
-			<h3 class="box-title"><?= gettext("Family Members") ?></h3>
+			<h3 class="box-title"><?= gettext("Membros da Família") ?></h3>
 			<div class="pull-right"><br/>
-				<input type="submit" class="btn btn-primary" value="<?= gettext("Save") ?>" name="FamilySubmit">
+				<input type="submit" class="btn btn-primary" value="<?= gettext("Salvar") ?>" name="FamilySubmit">
 			</div>
 		</div><!-- /.box-header -->
 		<div class="box-body">
@@ -913,7 +868,7 @@ require "Include/Header.php";
 	<tr>
 		<td colspan="2">
 		<div class="MediumText">
-			<center><?= $iFamilyID < 0 ? gettext("You may create family members now or add them later.  All entries will become <i>new</i> person records.") : '' ?></center>
+			<center><?= $iFamilyID < 0 ? gettext("Você pode criar membros da família agora ou adicioná-los mais tarde. Todas as entradas se tornarão novos registros de pessoa.") : '' ?></center>
 		</div><br><br>
 		<table cellpadding="3" cellspacing="0" width="100%">
 		<thead>

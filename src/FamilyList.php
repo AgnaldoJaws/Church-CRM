@@ -6,13 +6,13 @@ $sSQL = "select * from family_fam fam order by fam_Name";
 $rsFamilies = RunQuery($sSQL);
 
 // Set the page title and include HTML header
-$sPageTitle = gettext("Family List");
+$sPageTitle = gettext("Lista de Família");
 require "Include/Header.php";
 
 ?>
 
 <div class="pull-right">
-    <a class="btn btn-success" role="button" href="FamilyEditor.php"> <span class="fa fa-plus" aria-hidden="true"></span> Add Family</a>
+    <a class="btn btn-success" role="button" href="FamilyEditor.php"> <span class="fa fa-plus" aria-hidden="true"></span> Adicionar Família</a>
 </div>
 <p><br/><br/></p>
 <div class="box">
@@ -20,14 +20,14 @@ require "Include/Header.php";
         <table id="families" class="table table-striped table-bordered" cellspacing="0" width="100%">
             <thead>
             <tr>
-                <th>Name</th>
-                <th>Home Phone</th>
-                <th>Address</th>
-                <th>City</th>
-                <th>State</th>
+                <th>Nome</th>
+                <th>Telefone Residêncial</th>
+                <th>Emdereço</th>
+                <th>Cidade</th>
+                <th>Estado</th>
                 <th>Zip</th>
-                <th>Created</th>
-                <th>Edited</th>
+                <th>Data de Cadastro</th>
+                <th>Editado</th>
             </tr>
             </thead>
             <tbody>

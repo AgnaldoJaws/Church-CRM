@@ -44,7 +44,7 @@ if($eType!="All"){
   extract($aRow);
   $sPageTitle = "Listing Events of Type = ".$type_name;
 } else {
-  $sPageTitle = gettext("Listing All Church Events");
+  $sPageTitle = gettext("Listar Todos os Eventos da Igreja");
 }
 
 // retrieve the year selector
@@ -87,7 +87,7 @@ $numRows = mysql_num_rows($rsOpps);
 ?>
 <table cellpadding="1" align="center" cellspacing="0" class='table'>
 <tr>
-<td align="center" width="50%"><p><strong><?= gettext("Select Event Types To Display") ?></strong></p>
+<td align="center" width="50%"><p><strong><?= gettext("Selecionar Tipo de Evento para Mostrar") ?></strong></p>
     <form name="EventTypeSelector" method="POST" action="ListEvents.php">
        <select name="WhichType" onchange="javascript:this.form.submit()" class='form-control'>
         <option value="All">All</option>
@@ -125,7 +125,7 @@ for($r=1; $r<=$numRows; $r++){
 
 ?>
 
-<td align="center" width="50%"><p><strong><?= gettext("Display Events in Year") ?></strong></p>
+<td align="center" width="50%"><p><strong><?= gettext("Mostar Evento do Ano") ?></strong></p>
        <select name="WhichYear" onchange="javascript:this.form.submit()" class='form-control'>
         <?php
         for ($r = 1; $r <= $numRows; $r++)
@@ -358,7 +358,7 @@ if ($numRows > 0)
 <div class='text-center'>
   <a href="EventEditor.php" class='btn btn-primary'>
     <i class='fa fa-ticket'></i>
-    <?= gettext("Add New Event") ?>
+    <?= gettext("Adicionar Novo Evento") ?>
   </a>
 </div>
 

@@ -18,7 +18,7 @@ require "Include/Config.php";
 require "Include/Functions.php";
 
 //Set the page title
-$sPageTitle = gettext("Person Editor");
+$sPageTitle = gettext("Editor de Membros");
 
 //Get the PersonID out of the querystring
 if (array_key_exists ("PersonID", $_GET))
@@ -547,55 +547,55 @@ require "Include/Header.php";
 	<div class="alert alert-info alert-dismissable">
 		<i class="fa fa-info"></i>
 		<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-		<strong><span style="color: red;"><?= gettext("Red text") ?></span></strong> <?php echo gettext("indicates items inherited from the associated family record.");?>
+		<strong><span style="color: red;"><?= gettext("Red text") ?></span></strong> <?php echo gettext("Indica os Itens Herdados do Registro da Família Associado.");?>
 	</div>
 	<?php if ( $bErrorFlag ) { ?>
 	<div class="alert alert-danger alert-dismissable">
 		<i class="fa fa-ban"></i>
 		<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-		<?= gettext("Invalid fields or selections. Changes not saved! Please correct and try again!") ?>
+		<?= gettext("Campos Inválidos ou Selecções. Alterações não Salvas! Corrija e Tente Novamente!") ?>
 	</div>
 	<?php } ?>
 	<div class="box box-info clearfix">
 		<div class="box-header">
-			<h3 class="box-title"><?= gettext("Personal Info") ?></h3>
+			<h3 class="box-title"><?= gettext("Informações do Membro") ?></h3>
 			<div class="pull-right"><br/>
-				<input type="submit" class="btn btn-primary" value="<?= gettext("Save") ?>" name="PersonSubmit">
+				<input type="submit" class="btn btn-primary" value="<?= gettext("Salvar") ?>" name="PersonSubmit">
 			</div>
 		</div><!-- /.box-header -->
 		<div class="box-body">
 			<div class="form-group">
 				<div class="row">
 					<div class="col-xs-2">
-						<label><?= gettext("Gender:") ?></label>
+						<label><?= gettext("Genero:") ?></label>
 						<select name="Gender" class="form-control">
-							<option value="0"><?= gettext("Select Gender") ?></option>
+							<option value="0"><?= gettext("Selecione o Genero") ?></option>
 							<option value="0" disabled>-----------------------</option>
-							<option value="1" <?php if ($iGender == 1) { echo "selected"; } ?>><?= gettext("Male") ?></option>
-							<option value="2" <?php if ($iGender == 2) { echo "selected"; } ?>><?= gettext("Female") ?></option>
+							<option value="1" <?php if ($iGender == 1) { echo "selected"; } ?>><?= gettext("Homem") ?></option>
+							<option value="2" <?php if ($iGender == 2) { echo "selected"; } ?>><?= gettext("Mulher") ?></option>
 						</select>
 					</div>
 					<div class="col-xs-3">
-						<label for="Title"><?= gettext("Title:") ?></label>
+						<label for="Title"><?= gettext("Título:") ?></label>
 						<input type="text" name="Title" id="Title" value="<?= htmlentities(stripslashes($sTitle),ENT_NOQUOTES, "UTF-8") ?>" class="form-control" placeholder="<?= gettext("Mr., Mrs., Dr., Rev.") ?>">
 					</div>
 				</div>
 				<p/>
 				<div class="row">
 					<div class="col-xs-2">
-						<label for="FirstName"><?= gettext("First Name:") ?></label>
+						<label for="FirstName"><?= gettext("Primeiro Nome:") ?></label>
 						<input type="text" name="FirstName" id="FirstName" value="<?= htmlentities(stripslashes($sFirstName),ENT_NOQUOTES, "UTF-8") ?>" class="form-control">
 						<?php if ($sFirstNameError) { ?><br><font color="red"><?php echo $sFirstNameError ?></font><?php } ?>
 					</div>
 
 					<div class="col-xs-2">
-						<label for="MiddleName"><?= gettext("Middle Name:") ?></label>
+						<label for="MiddleName"><?= gettext("Nome do Meio:") ?></label>
 						<input type="text" name="MiddleName" id="MiddleName" value="<?= htmlentities(stripslashes($sMiddleName),ENT_NOQUOTES, "UTF-8") ?>" class="form-control">
 						<?php if ($sMiddleNameError) { ?><br><font color="red"><?php echo $sMiddleNameError ?></font><?php } ?>
 					</div>
 
 					<div class="col-xs-2">
-						<label for="LastName"><?= gettext("Last Name:") ?></label>
+						<label for="LastName"><?= gettext("Ultimo Nome:") ?></label>
 						<input type="text" name="LastName" id="LastName" value="<?= htmlentities(stripslashes($sLastName),ENT_NOQUOTES, "UTF-8") ?>" class="form-control">
 						<?php if ($sLastNameError) { ?><br><font color="red"><?php echo $sLastNameError ?></font><?php } ?>
 					</div>
@@ -607,16 +607,16 @@ require "Include/Header.php";
 					</div>
 
 					<div class="col-xs-1">
-						<label for="Suffix"><?= gettext("Suffix:") ?></label>
+						<label for="Suffix"><?= gettext("Sufixo:") ?></label>
 						<input type="text" name="Suffix" id="Suffix" value="<?= htmlentities(stripslashes($sSuffix),ENT_NOQUOTES, "UTF-8") ?>" placeholder="<?= gettext("Jr., Sr., III") ?>" class="form-control">
 					</div>
 				</div>
 				<p/>
 				<div class="row">
 					<div class="col-xs-2">
-						<label><?= gettext("Birth Month:") ?></label>
+						<label><?= gettext("Mês de Aniverśario") ?></label>
 						<select name="BirthMonth" class="form-control">
-							<option value="0" <?php if ($iBirthMonth == 0) { echo "selected"; } ?>><?= gettext("Select Month") ?></option>
+							<option value="0" <?php if ($iBirthMonth == 0) { echo "selected"; } ?>><?= gettext("Selecione o Mês") ?></option>
 							<option value="01" <?php if ($iBirthMonth == 1) { echo "selected"; } ?>><?= gettext("January") ?></option>
 							<option value="02" <?php if ($iBirthMonth == 2) { echo "selected"; } ?>><?= gettext("February") ?></option>
 							<option value="03" <?php if ($iBirthMonth == 3) { echo "selected"; } ?>><?= gettext("March") ?></option>
@@ -632,9 +632,9 @@ require "Include/Header.php";
 						</select>
 					</div>
 					<div class="col-xs-2">
-						<label><?= gettext("Birth Day:") ?></label>
+						<label><?= gettext("Dia de Aniverśario:") ?></label>
 						<select name="BirthDay" class="form-control">
-							<option value="0"><?= gettext("Select Day") ?></option>
+							<option value="0"><?= gettext("Selecione o Dia") ?></option>
 							<?php for ($x=1; $x < 32; $x++) {
 								if ($x < 10) { $sDay = "0" . $x; } else { $sDay = $x; } ?>
 								<option value="<?= $sDay ?>" <?php if ($iBirthDay == $x) {echo "selected"; } ?>><?= $x ?></option>
@@ -642,13 +642,13 @@ require "Include/Header.php";
 						</select>
 					</div>
 					<div class="col-xs-2">
-						<label><?= gettext("Birth Year:") ?></label>
+						<label><?= gettext("Ano de Aniverśario:") ?></label>
 						<input type="text" name="BirthYear" value="<?php echo $iBirthYear ?>" maxlength="4" size="5" placeholder="yyyy" class="form-control">
 						<?php if ($sBirthYearError) { ?><font color="red"><br><?php echo $sBirthYearError ?></font><?php } ?>
 						<?php if ($sBirthDateError) { ?><font color="red"><?php echo $sBirthDateError ?></font><?php } ?>
 					</div>
 					<div class="col-xs-2">
-						<label><?= gettext("Hide Age") ?></label><br/>
+						<label><?= gettext("Esconder Idade") ?></label><br/>
 						<input type="checkbox" name="HideAge" value="1" <?php if ($bHideAge) echo " checked";?> />
 					</div>
 				</div>
@@ -657,16 +657,16 @@ require "Include/Header.php";
 	</div>
 	<div class="box box-info clearfix">
 		<div class="box-header">
-			<h3 class="box-title"><?= gettext("Family Info") ?></h3>
+			<h3 class="box-title"><?= gettext("Informações da Família") ?></h3>
 			<div class="pull-right"><br/>
-				<input type="submit" class="btn btn-primary" value="<?= gettext("Save") ?>" name="PersonSubmit">
+				<input type="submit" class="btn btn-primary" value="<?= gettext("Salvar") ?>" name="PersonSubmit">
 			</div>
 		</div><!-- /.box-header -->
 		<div class="box-body">
 			<div class="form-group col-xs-3">
-				<label><?= gettext("Family Role:") ?></label>
+				<label><?= gettext("Papel da família:") ?></label>
 				<select name="FamilyRole" class="form-control">
-					<option value="0"><?= gettext("Unassigned") ?></option>
+					<option value="0"><?= gettext("	Não Atribuido") ?></option>
 					<option value="0" disabled>-----------------------</option>
 					<?php while ($aRow = mysql_fetch_array($rsFamilyRoles)) {
 						extract($aRow);
@@ -696,9 +696,9 @@ require "Include/Header.php";
 	</div>
 	<div class="box box-info clearfix">
 		<div class="box-header">
-			<h3 class="box-title"><?= gettext("Contact Info") ?></h3>
+			<h3 class="box-title"><?= gettext("Informações de Contato") ?></h3>
 			<div class="pull-right"><br/>
-				<input type="submit" class="btn btn-primary" value="<?= gettext("Save") ?>" name="PersonSubmit">
+				<input type="submit" class="btn btn-primary" value="<?= gettext("Salvar") ?>" name="PersonSubmit">
 			</div>
 		</div><!-- /.box-header -->
 		<div class="box-body">
@@ -815,9 +815,9 @@ require "Include/Header.php";
 					<label for="HomePhone">
 						<?php
 						if ($bFamilyHomePhone)
-							echo "<span style=\"color: red;\">". gettext("Home Phone:") ."</span>";
+							echo "<span style=\"color: red;\">". gettext("Telefo Residêncial:") ."</span>";
 						else
-							echo gettext("Home Phone:");
+							echo gettext("Telefone Residêncial	:");
 						?>
 					</label>
 					<div class="input-group">
@@ -825,16 +825,16 @@ require "Include/Header.php";
 							<i class="fa fa-phone"></i>
 						</div>
 						<input type="text" name="HomePhone" value="<?= htmlentities(stripslashes($sHomePhone),ENT_NOQUOTES, "UTF-8") ?>" size="30" maxlength="30" class="form-control" data-inputmask='"mask": "(999) 999-9999"' data-mask>
-						<br><input type="checkbox" name="NoFormat_HomePhone" value="1" <?php if ($bNoFormat_HomePhone) echo " checked";?>><?= gettext("Do not auto-format") ?>
+						<br><input type="checkbox" name="NoFormat_HomePhone" value="1" <?php if ($bNoFormat_HomePhone) echo " checked";?>><?= gettext("Não formatado") ?>
 						</div>
 				</div>
 				<div class="form-group col-xs-3">
-					<label for="WorkPhone">
+					<label for="Telefone do Trabalho">
 					<?php
 					if ($bFamilyWorkPhone)
-						echo "<span style=\"color: red;\">" . gettext("Work Phone:") . "</span>";
+						echo "<span style=\"color: red;\">" . gettext("Telefone do Trabalho:") . "</span>";
 					else
-						echo gettext("Work Phone:");
+						echo gettext("Telefone do Trabalho:");
 					?>
 					</label>
 					<div class="input-group">
@@ -842,7 +842,7 @@ require "Include/Header.php";
 							<i class="fa fa-phone"></i>
 						</div>
 						<input type="text" name="WorkPhone" value="<?= htmlentities(stripslashes($sWorkPhone),ENT_NOQUOTES, "UTF-8") ?>" size="30" maxlength="30" class="form-control" data-inputmask="'mask': ['999-999-9999 [x99999]', '+099 99 99 9999[9]-9999']" data-mask/>
-						<br><input type="checkbox" name="NoFormat_WorkPhone" value="1" <?php if ($bNoFormat_WorkPhone) echo " checked";?>><?= gettext("Do not auto-format") ?>
+						<br><input type="checkbox" name="NoFormat_WorkPhone" value="1" <?php if ($bNoFormat_WorkPhone) echo " checked";?>><?= gettext("Não Formatado") ?>
 					</div>
 				</div>
 
@@ -850,9 +850,9 @@ require "Include/Header.php";
 					<label for="CellPhone">
 						<?php
 						if ($bFamilyCellPhone)
-							echo "<span style=\"color: red;\">" . gettext("Mobile Phone:") . "</span>";
+							echo "<span style=\"color: red;\">" . gettext("Celular:") . "</span>";
 						else
-							echo gettext("Mobile Phone:");
+							echo gettext("Celular:");
 						?>
 					</label>
 					<div class="input-group">
@@ -860,7 +860,7 @@ require "Include/Header.php";
 							<i class="fa fa-phone"></i>
 						</div>
 						<input type="text" name="CellPhone" value="<?= htmlentities(stripslashes($sCellPhone),ENT_NOQUOTES, "UTF-8") ?>" size="30" maxlength="30" class="form-control" data-inputmask='"mask": "(999) 999-9999"' data-mask>
-						<br><input type="checkbox" name="NoFormat_CellPhone" value="1" <?php if ($bNoFormat_CellPhone) echo " checked";?>><?= gettext("Do not auto-format") ?>
+						<br><input type="checkbox" name="NoFormat_CellPhone" value="1" <?php if ($bNoFormat_CellPhone) echo " checked";?>><?= gettext("Não Formatado") ?>
 					</div>
 				</div>
 			</div>
@@ -884,7 +884,7 @@ require "Include/Header.php";
 					</div>
 				</div>
 				<div class="form-group col-xs-4">
-					<label for="WorkEmail"><?= gettext("Work / Other Email:") ?></label>
+					<label for="WorkEmail"><?= gettext("Trabalho / Outro Email:") ?></label>
 					<div class="input-group">
 						<div class="input-group-addon">
 							<i class="fa fa-envelope"></i>
@@ -898,9 +898,9 @@ require "Include/Header.php";
 	</div>
 	<div class="box box-info clearfix">
 		<div class="box-header">
-			<h3 class="box-title"><?= gettext("Membership Info") ?></h3>
+			<h3 class="box-title"><?= gettext("Informações do Membro") ?></h3>
 			<div class="pull-right"><br/>
-				<input type="submit" class="btn btn-primary" value="<?= gettext("Save") ?>" name="PersonSubmit">
+				<input type="submit" class="btn btn-primary" value="<?= gettext("Salvar") ?>" name="PersonSubmit">
 			</div>
 		</div><!-- /.box-header -->
 		<div class="box-body">
@@ -945,9 +945,9 @@ require "Include/Header.php";
 	</div>
 	<div class="box box-info clearfix">
 		<div class="box-header">
-			<h3 class="box-title"><?= gettext("Custom Fields") ?></h3>
+			<h3 class="box-title"><?= gettext("Campos Personalisados") ?></h3>
 			<div class="pull-right"><br/>
-				<input type="submit" class="btn btn-primary" value="<?= gettext("Save") ?>" name="PersonSubmit">
+				<input type="submit" class="btn btn-primary" value="<?= gettext("Salvar") ?>" name="PersonSubmit">
 			</div>
 		</div><!-- /.box-header -->
 		<div class="box-body">
@@ -978,9 +978,9 @@ require "Include/Header.php";
 			} ?>
 		</div>
 	</div>
-	<input type="submit" class="btn btn-primary" value="<?= gettext("Save") ?>" name="PersonSubmit">
-	<?php if ($_SESSION['bAddRecords']) { echo "<input type=\"submit\" class=\"btn btn-primary\" value=\"" . gettext("Save and Add") . "\" name=\"PersonSubmitAndAdd\">"; } ?>
-	<input type="button" class="btn btn-primary" value="<?= gettext("Cancel") ?>" name="PersonCancel" onclick="javascript:document.location='<?php if (strlen($iPersonID) > 0) { echo "PersonView.php?PersonID=" . $iPersonID; } else {echo "SelectList.php?mode=person"; } ?>';">
+	<input type="submit" class="btn btn-primary" value="<?= gettext("Salvar") ?>" name="PersonSubmit">
+	<?php if ($_SESSION['bAddRecords']) { echo "<input type=\"submit\" class=\"btn btn-primary\" value=\"" . gettext("Salvar e Adicionar") . "\" name=\"PersonSubmitAndAdd\">"; } ?>
+	<input type="button" class="btn btn-primary" value="<?= gettext("Cancelar") ?>" name="PersonCancel" onclick="javascript:document.location='<?php if (strlen($iPersonID) > 0) { echo "PersonView.php?PersonID=" . $iPersonID; } else {echo "SelectList.php?mode=person"; } ?>';">
 </form>
 <!-- InputMask -->
 <script src="<?= $sRootPath ?>/skin/adminlte/plugins/input-mask/jquery.inputmask.js" type="text/javascript"></script>

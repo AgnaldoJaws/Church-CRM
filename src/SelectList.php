@@ -144,7 +144,7 @@ $iGroupType = -1;
 
 if ($sMode == 'person') {
 	// Set the page title
-	$sPageTitle = gettext("Person Listing");
+	$sPageTitle = gettext("Listar Membros");
     $iMode = 1;
 
 	if (array_key_exists ("Classification", $_GET) && $_GET["Classification"] != "")
@@ -483,7 +483,7 @@ if ($iMode == 1) {
 <table align="center"><tr><td align="center">
 <?= gettext("Sort order:") ?>
 <select name="Sort" onchange="this.form.submit()">
-		<option value="name" <?php if ($sSort == "name" || empty($sSort)) echo "selected";?>><?= gettext("By Name") ?></option>
+		<option value="name" <?php if ($sSort == "name" || empty($sSort)) echo "selected";?>><?= gettext("Por Nome") ?></option>
 		<option value="family" <?php if ($sSort == "family") echo "selected";?>><?= gettext("By Family") ?></option>
 		<option value="zip" <?php if ($sSort == "zip") echo "selected";?>><?= gettext("By ZIP/Postal Code") ?></option>
 		<option value="entered" <?php if ($sSort == "entered") echo "selected";?>><?= gettext("By Newest Entries") ?></option>
@@ -493,7 +493,7 @@ if ($iMode == 1) {
 <input type="text" name="Filter" value="<?= $sFilter ?>">
 <input type="hidden" name="mode" value="<?= $sMode ?>">
 <input type="hidden" name="Letter" value="<?= $sLetter ?>">
-<input type="submit" class="btn" value="<?= gettext("Apply Filter") ?>">
+<input type="submit" class="btn" value="<?= gettext("Aplicar Filtro") ?>">
 
 </td></tr>
 <?php
@@ -503,7 +503,7 @@ echo '	<tr><td align="center">
 		<option value="" ';
 if (!isset($iGender))
 	echo " selected ";
-echo '> ' . gettext ("Male & Female") . '</option>';
+echo '> ' . gettext ("Genero") . '</option>';
 
 echo '<option value="1"';
 if (isset($iGender) && $iGender == 1)
@@ -521,7 +521,7 @@ echo '	<select name="Classification" onchange="this.form.submit()">
 		<option value="" ';
 if ($iClassification >= 0)
 	echo ' selected ';
-echo '>' . gettext("All Classifications") . '</option>';
+echo '>' . gettext("Todas as Classificações") . '</option>';
 
 foreach ($aClassificationName as $key => $value) {
 	echo '<option value="'.$key.'"';
@@ -544,7 +544,7 @@ echo '<select name="FamilyRole" onchange="this.form.submit()">';
 echo '<option value="" ';
 if ($iFamilyRole < 0)
 	echo ' selected ';
-echo '>' . gettext("All Family Roles") . '</option>';
+echo '>' . gettext("Todos os papéis da Família") . '</option>';
 
 foreach ($aFamilyRoleName as $key => $value) {
 	echo '<option value="'.$key.'"';
@@ -567,7 +567,7 @@ echo '<select name="PersonProperties" onchange="this.form.submit()">';
 echo '<option value="" ';
 if (!isset($iPersonProperty))
 	echo ' selected ';
-echo '>' . gettext("All Contact Properties") . '</option>';
+echo '>' . gettext("Todas as Propriedades de Contato") . '</option>';
 
 foreach ($aPersonPropertyName as $key => $value) {
 	echo '<option value="'.$key.'"';
@@ -594,7 +594,7 @@ if ($iMode == 1) {
 	echo '<option value="" ';
 	if (!isset($iGroupType))
 		echo ' selected ';
-	echo '>' . gettext("All Group Types") . '</option>';
+	echo '>' . gettext("Todos Tipos de Grupo") . '</option>';
 
 	foreach ($aGroupTypes as $key => $value) {
 		echo '<option value="'.$key.'"';
@@ -684,10 +684,11 @@ if ($iMode == 1) {
 	}
 } ?>
 
-<input type="button" class="btn" value="<?= gettext("Clear Filters") ?>" onclick="javascript:document.location='SelectList.php?mode=<?= $sMode ?>&amp;Sort=<?= $sSort ?>&amp;type=<?= $iGroupTypeMissing ?>'"><BR><BR>
-<input name="AddAllToCart" type="submit" class="btn btn-primary" value="<?= gettext("Add to Cart") ?>">&nbsp;
-<input name="IntersectCart" type="submit" class="btn btn-warning" value="<?= gettext("Intersect with Cart") ?>">&nbsp;
-<input name="RemoveFromCart" type="submit" class="btn btn-danger" value="<?= gettext("Remove from Cart") ?>">
+<input type="button" class="btn" value="<?= gettext("Limpar Filtro") ?>" onclick="javascript:document.location='SelectList.php?mode=<?= $sMode ?>&amp;Sort=<?= $sSort ?>&amp;type=<?= $iGroupTypeMissing ?>'"><BR><BR>
+<input name="AddAllToCart" type="submit" class="btn btn-primary" value="<?= gettext("
+Adicionar ao Carrinho") ?>">&nbsp;
+<input name="IntersectCart" type="submit" class="btn btn-warning" value="<?= gettext("Cruzar com Carrinho") ?>">&nbsp;
+<input name="RemoveFromCart" type="submit" class="btn btn-danger" value="<?= gettext("Remover Do Carrinho") ?>">
 
 </td></tr>
 </table></form>
@@ -695,7 +696,7 @@ if ($iMode == 1) {
 </div>
 <div class="box box-warning">
 	<div class="box-header">
-        Listing
+        Listar
     </div>
 	<div class="box-body">
 <?php
@@ -704,7 +705,7 @@ if ($iMode == 1) {
 echo '<div align="center">';
 echo "<a href=\"SelectList.php?mode=$sMode&amp;type=$iGroupTypeMissing&amp;Filter=$sFilter&amp;Classification=$iClassificationStr&amp;FamilyRole=$iFamilyRoleStr&amp;Gender=$iGenderStr&amp;grouptype=$iGroupTypeStr&amp;groupid=$iGroupIDStr&amp;grouproleid=$iRoleIDStr&amp;PersonProperties=$iPersonPropertyStr";
 if($sSort) echo "&amp;Sort=$sSort";
-	echo "\">" . gettext("View All") . "</a>";
+	echo "\">" . gettext("Ver Todos") . "</a>";
 while ($aLetter = mysql_fetch_row($rsLetters)) {
 	$aLetter[0] = mb_strtoupper($aLetter[0]);
 	if ($aLetter[0] == $sLetter) {

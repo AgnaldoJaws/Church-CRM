@@ -29,7 +29,7 @@ require "Include/Config.php";
 require "Include/Functions.php";
 require "Include/RenderFunctions.php";
 
-$sPageTitle = gettext("Church Event Editor");
+$sPageTitle = gettext("Editor de Evento da Igreja");
 
 $sAction = 'Create Event';
 require "Include/Header.php";
@@ -417,7 +417,7 @@ else if ($sAction = gettext('Edit') && !empty($sOpp))
 <div class='box'>
 	<div class='box-header'>
 		<h3 class='box-title'>
-			<?= ($EventExists==0) ? gettext("Create a new Event") : gettext("Editing Event ID: ").$iEventID ?>
+			<?= ($EventExists==0) ? gettext("Criar um Novo Evento") : gettext("Editing Event ID: ").$iEventID ?>
 		</h3>
 	</div>
 	<div class='box-header'>

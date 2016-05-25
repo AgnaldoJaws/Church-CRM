@@ -11,7 +11,7 @@ require 'Include/PersonFunctions.php';
 require_once "Service/DashboardService.php";
 
 // Set the page title
-$sPageTitle = "Members Dashboard";
+$sPageTitle = "Dashboard dos Membros";
 
 require 'Include/Header.php';
 
@@ -35,22 +35,22 @@ $rsKidsGender = RunQuery($sSQL);
 <!-- Default box -->
 <div class="box">
     <div class="box-header with-border">
-        <h3 class="box-title">Members Functions</h3>
+        <h3 class="box-title">Funções</h3>
     </div>
     <div class="box-body">
-        <a href="SelectList.php?mode=person" class="btn btn-app"><i class="fa fa-user"></i><?= gettext("All People") ?></a>
-        <a href="OptionManager.php?mode=classes" class="btn btn-app"><i class="fa fa-gears"></i><?= gettext("Classifications Manager") ?></a>
+        <a href="SelectList.php?mode=person" class="btn btn-app"><i class="fa fa-user"></i><?= gettext("Todos os Membros") ?></a>
+        <a href="OptionManager.php?mode=classes" class="btn btn-app"><i class="fa fa-gears"></i><?= gettext("Gerenciador de Classificações") ?></a>
         <br/>
-        <a href="FamilyList.php" class="btn btn-app"><i class="fa fa-users"></i><?= gettext("All Families") ?></a>
-        <a href="OptionManager.php?mode=famroles" class="btn btn-app"><i class="fa fa-cubes"></i><?= gettext("Family Roles") ?></a>
-        <a href="GeoPage.php" class="btn btn-app"><i class="fa fa-globe"></i><?= gettext("Family Geographic") ?></a>
-        <a href="MapUsingGoogle.php?GroupID=-1" class="btn btn-app"><i class="fa fa-map"></i><?= gettext("Family Map") ?></a>
-        <a href="UpdateAllLatLon.php" class="btn btn-app"><i class="fa fa-map-pin"></i><?= gettext("Update All Family Coordinates") ?></a>
+        <a href="FamilyList.php" class="btn btn-app"><i class="fa fa-users"></i><?= gettext("Todas as Famílias") ?></a>
+        <a href="OptionManager.php?mode=famroles" class="btn btn-app"><i class="fa fa-cubes"></i><?= gettext("Papeis das Famílias") ?></a>
+        <a href="GeoPage.php" class="btn btn-app"><i class="fa fa-globe"></i><?= gettext("Demografia da Famílias") ?></a>
+        <a href="MapUsingGoogle.php?GroupID=-1" class="btn btn-app"><i class="fa fa-map"></i><?= gettext("Mapa da Famílias") ?></a>
+        <a href="UpdateAllLatLon.php" class="btn btn-app"><i class="fa fa-map-pin"></i><?= gettext("Atualizar Todas as Coordenadas das Famílias") ?></a>
         <?php if ($_SESSION['bAdmin']) { ?>
             <br/>
-            <a href="VolunteerOpportunityEditor.php" class="btn btn-app"><i class="fa fa-bullhorn"></i><?= gettext("Volunteer Opportunities") ?></a>
-            <a href="PersonCustomFieldsEditor.php" class="btn btn-app"><i class="fa fa-gear"></i><?= gettext("Custom Person Fields") ?></a>
-            <a href="FamilyCustomFieldsEditor.php" class="btn btn-app"><i class="fa fa-gear"></i><?= gettext("Custom Family Fields") ?></a>
+            <a href="VolunteerOpportunityEditor.php" class="btn btn-app"><i class="fa fa-bullhorn"></i><?= gettext("Oprtunidades de Trabalho Voluntário") ?></a>
+            <a href="PersonCustomFieldsEditor.php" class="btn btn-app"><i class="fa fa-gear"></i><?= gettext("Campo de personalização de Membro") ?></a>
+            <a href="FamilyCustomFieldsEditor.php" class="btn btn-app"><i class="fa fa-gear"></i><?= gettext("Campo de Personalização de Família") ?></a>
         <?php } ?>
 
     </div>
@@ -65,14 +65,14 @@ $rsKidsGender = RunQuery($sSQL);
                     <?= $familyCount['familyCount'] ?>
                 </h3>
                 <p>
-                    Families
+                    Família
                 </p>
             </div>
             <div class="icon">
                 <i class="ion ion-person-stalker"></i>
             </div>
             <a href="<?= $sRootPath . "/" ?>FamilyList.php" class="small-box-footer">
-                See all Families <i class="fa fa-arrow-circle-right"></i>
+                Ver Todas as Famílias <i class="fa fa-arrow-circle-right"></i>
             </a>
         </div>
     </div><!-- ./col -->
@@ -84,14 +84,14 @@ $rsKidsGender = RunQuery($sSQL);
                     <?= $personCount['personCount'] ?>
                 </h3>
                 <p>
-                    People
+                    Membros
                 </p>
             </div>
             <div class="icon">
                 <i class="ion ion-person"></i>
             </div>
             <a href="<?= $sRootPath . "/" ?>SelectList.php?mode=person" class="small-box-footer">
-                See All People <i class="fa fa-arrow-circle-right"></i>
+                Ver Todos os Membros <i class="fa fa-arrow-circle-right"></i>
             </a>
         </div>
     </div><!-- ./col -->
@@ -103,14 +103,14 @@ $rsKidsGender = RunQuery($sSQL);
                     <?= $groupStats['sundaySchoolkids'] ?>
                 </h3>
                 <p>
-                    Sunday School Kids
+                    Escola de Domingo da Crianças
                 </p>
             </div>
             <div class="icon">
                 <i class="fa fa-child"></i>
             </div>
             <a href="<?= $sRootPath ?>/sundayschool/SundaySchoolDashboard.php" class="small-box-footer">
-                More info <i class="fa fa-arrow-circle-right"></i>
+                Mais Informações <i class="fa fa-arrow-circle-right"></i>
             </a>
         </div>
     </div><!-- ./col -->
@@ -122,14 +122,14 @@ $rsKidsGender = RunQuery($sSQL);
           <?= $groupStats['groups'] -$groupStats['sundaySchoolClasses']  ?>
         </h3>
         <p>
-          Groups
+          Grupos
         </p>
       </div>
       <div class="icon">
         <i class="fa fa-gg"></i>
       </div>
       <a href="<?= $sRootPath ?>/grouplist" class="small-box-footer">
-        More info <i class="fa fa-arrow-circle-right"></i>
+        Mais Infomrações <i class="fa fa-arrow-circle-right"></i>
       </a>
     </div>
   </div><!-- ./col -->
@@ -141,7 +141,7 @@ $rsKidsGender = RunQuery($sSQL);
             <div class="box-header with-border">
                 <i class="fa fa-pie-chart"></i>
 
-                <h3 class="box-title">Family Roles</h3>
+                <h3 class="box-title">Papéis das Famílias</h3>
 
                 <div class="box-tools pull-right">
                     <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
@@ -152,9 +152,9 @@ $rsKidsGender = RunQuery($sSQL);
             <div class="box-body no-padding">
                 <table class="table table-condensed">
                     <tr>
-                        <th>Role / Gender</th>
-                        <th>% of Members</th>
-                        <th style="width: 40px">Count</th>
+                        <th>Papel / Genero</th>
+                        <th>% de Membros</th>
+                        <th style="width: 40px">Contagem</th>
                     </tr>
                     <? foreach ($demographicStats as $key => $value) { ?>
                     <tr>
@@ -175,7 +175,7 @@ $rsKidsGender = RunQuery($sSQL);
         <div class="box box-primary">
             <div class="box-header with-border">
                 <i class="fa fa-bar-chart-o"></i>
-                <h3 class="box-title">People Classification</h3>
+                <h3 class="box-title">Classificação de Membro</h3>
                 <div class="box-tools pull-right">
                     <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
                     </button>
@@ -184,9 +184,9 @@ $rsKidsGender = RunQuery($sSQL);
             </div>
             <table class="table table-condensed">
                 <tr>
-                    <th>Classification</th>
-                    <th>% of Members</th>
-                    <th style="width: 40px">Count</th>
+                    <th>Classificações</th>
+                    <th>% de Membros</th>
+                    <th style="width: 40px">Contagem</th>
                 </tr>
                 <? foreach ($personStats as $key => $value) { ?>
                     <tr>
@@ -205,7 +205,7 @@ $rsKidsGender = RunQuery($sSQL);
         <div class="box box-info">
             <div class="box-header">
                 <i class="ion ion-android-contacts"></i>
-                <h3 class="box-title">Gender Demographics</h3>
+                <h3 class="box-title">Demografia de Gêneros</h3>
                 <div class="box-tools pull-right">
                     <div id="gender-donut-legend" class="chart-legend"></div>
                 </div>

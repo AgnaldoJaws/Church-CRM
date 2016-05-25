@@ -38,7 +38,7 @@ function Header_head_metatag() {
     echo $sMetaRefresh;
   }
   ?>
-  <title>ChurchCRM: <?= $sPageTitle ?></title>
+  <title> Ministério D.O.M: <?= $sPageTitle ?></title>
   <?php
 }
 
@@ -339,27 +339,19 @@ function addMenuItem($aMenu, $mIdx) {
     global $sLanguage, $bExportCSV, $sMetaRefresh, $bToolTipsOn, $bRegistered, $sHeader, $sGlobalMessage, $sGlobalMessageClass;
     global $MenuFirst, $sPageTitle, $sPageTitleSub, $sRootPath;
 
-    $loggedInUserPhoto = (new PersonService())->getPhoto($_SESSION['iUserID']);
+    $loggedInUserPhoto = "Images/Person/imgpsh_fullsize.png";
 
     $MenuFirst = 1;
     ?>
 
     <header class="main-header">
       <!-- Logo -->
-      <a href="<?= $sRootPath ?>/Menu.php" class="logo">
-        <!-- mini logo for sidebar mini 50x50 pixels -->
-        <span class="logo-mini"><b>C</b>RM</span>
-        <!-- logo for regular state and mobile devices -->
-        <?php if ($sHeader) { ?>
-          <span class="logo-lg"><?= html_entity_decode($sHeader, ENT_QUOTES) ?></span>
-        <?php }
-        Else {
-          ?>
-          <span class="logo-lg"><b>Church</b>CRM</span>
-  <?php } ?>
-      </a>
+      
+      
       <!-- Header Navbar: style can be found in header.less -->
+
       <nav class="navbar navbar-static-top" role="navigation">
+
         <!-- Sidebar toggle button-->
         <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
           <span class="sr-only">Toggle navigation</span>
@@ -410,12 +402,13 @@ function addMenuItem($aMenu, $mIdx) {
                 <!-- /.row --
                 </li>-->
                 <!-- Menu Footer-->
-                <li class="user-footer">
+
+                <li class="xxx">
                   <div class="pull-left">
-                    <a href="<?= $sRootPath . "/" ?>UserPasswordChange.php" class="btn btn-default btn-flat">Change Password</a>
+                    <a href="<?= $sRootPath . "/" ?>UserPasswordChange.php" class="btn btn-default btn-flat">Trocar Senha</a>
                   </div>
                   <div class="pull-right">
-                    <a href="<?= $sRootPath . "/" ?>SettingsIndividual.php" class="btn btn-default btn-flat">My Settings</a>
+                    <a href="<?= $sRootPath . "/" ?>SettingsIndividual.php" class="btn btn-default btn-flat">Configurações</a>
                   </div>
                 </li>
               </ul>
@@ -454,7 +447,20 @@ function addMenuItem($aMenu, $mIdx) {
     <!-- =============================================== -->
 
     <!-- Left side column. contains the sidebar -->
+     <style type="text/css">
+        #logo-menu {
+          margin-top: -40px;
+        }
+        .name {
+          color: white;
+          margin-top: 10px;
+        }
+     </style>
     <aside class="main-sidebar">
+    <a href="<?= $sRootPath ?>/Menu.php" class="logo" >        
+          <img src="Images/Person/imgpsh_fullsize.png" alt="" id = "logo-menu" class="profile-user-img img-responsive img-circle imgFace"/>        
+        <h5 class="text-center name">  Ministério D.O.M </h5>
+      </a>
       <!-- sidebar: style can be found in sidebar.less -->
       <section class="sidebar">
         <!-- search form -->
@@ -466,7 +472,9 @@ function addMenuItem($aMenu, $mIdx) {
         </form>
         <!-- /.search form -->
         <!-- sidebar menu: : style can be found in sidebar.less -->
+
         <ul class="sidebar-menu">
+
           <li>
             <a href="<?= $sRootPath . "/" ?>Menu.php">
               <i class="fa fa-dashboard"></i> <span>Painel de Controle</span>

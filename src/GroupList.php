@@ -27,7 +27,7 @@ require 'Include/Functions.php';
 require 'Service/GroupService.php';
 
 //Set the page title
-$sPageTitle = gettext('Group Listing');
+$sPageTitle = gettext('Listar Grupo');
 $groupService = new GroupService();
 require 'Include/Header.php'; ?>
 
@@ -41,10 +41,10 @@ if ($_SESSION['bManageGroups'])
 
 <br>
 <form action="#" method="get" class="form">
-    <label for="addNewGruop"><?= gettext("Add New Group: ") ?></label>
+    <label for="addNewGruop"><?= gettext("Adicionar Novo Grupo: ") ?></label>
     <input class="form-control newGroup" name="groupName" id="groupName" style="width:100%">
     <br>
-    <button type="button" class="btn btn-primary" id="addNewGroup">Add New Group</button>
+    <button type="button" class="btn btn-primary" id="addNewGroup">Adicionar Novo Grupo</button>
 </form>
 <?php
 }

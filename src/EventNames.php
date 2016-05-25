@@ -29,7 +29,7 @@ if (!$_SESSION['bAdmin'] && !$_SESSION['bAddEvent'])
     header ("Location: Menu.php");
 }
 
-$sPageTitle = gettext("Edit Event Types");
+$sPageTitle = gettext("Editar Tipos de Eventos");
 
 require "Include/Header.php";
 
@@ -258,7 +258,7 @@ if (FilterInput($_POST["Action"]) == "NEW")
 <div class="box">
   <div class="box-header">
     <?php if ($numRows > 0) { ?>
-      <h3 class="box-title"><?= gettext("There currently ".($numRows == 1 ? "is ".$numRows." event":"are ".$numRows." custom event types")) ?></h3>
+      <h3 class="box-title"><?= gettext("Neste Movento Há ".($numRows == 1 ? "is ".$numRows." event":"".$numRows." Tipos de Evento Customizados")) ?></h3>
     <?php } ?>
   </div>
 
@@ -270,12 +270,12 @@ if (FilterInput($_POST["Action"]) == "NEW")
       <table class="table table-striped table-bordered data-table">
         <thead>
          <tr>
-            <th><?= gettext("Event Type") ?></th>
-            <th><?= gettext("Name") ?></th>
-            <th><?= gettext("Recurrance Pattern") ?></th>
-            <th><?= gettext("Start Time") ?></th>
-            <th><?= gettext("Attendance Counts") ?></th>
-            <th><?= gettext("Action") ?></th>
+            <th><?= gettext("Tipo de Evento") ?></th>
+            <th><?= gettext("Nome") ?></th>
+            <th><?= gettext("Padrão de Recorrência") ?></th>
+            <th><?= gettext("Hora de Início") ?></th>
+            <th><?= gettext("Contagens de atendimento") ?></th>
+            <th><?= gettext("Ações") ?></th>
           </tr>
         </thead>
         <tbody>
