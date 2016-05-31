@@ -1,6 +1,7 @@
 <html>
 	<header>
 		<meta charset="UTF-8">
+
 	</header>
 	<body>
 
@@ -71,7 +72,24 @@ require "Include/Functions.php";
 .print {
 margin-left: 33%;
 }
+
+.but {
+display: inline-block;
+background-color: #ccc;
+color: #444;
+padding: 10px 20px;
+text-decoration: none;
+box-sizing: border-box;
+font-family: Helvetica, Arial, sans-serif;
+font-size: 14px;
+border: 0px;
+margin-left: 50%;
+margin-top: 10px;
+}
+
  </style>
+
+
 
 <?php 
 $id = $_GET['per_ID'];
@@ -116,7 +134,10 @@ $membros = $stmt->fetchAll(\PDO::FETCH_ASSOC);
 	</div>
  </div>
 <?php endforeach ?>
-<a href="Menu.php" class="btn btn-info" role="button">Voltar</a>
+	
+		<a href="Menu.php" class = "but" role="button">Voltar</a>
+
+
 <div class="print"> <h1> Para imprimir Ctrl + P </h1> </div>
 
  </body>
