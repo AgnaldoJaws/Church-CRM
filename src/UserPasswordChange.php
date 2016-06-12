@@ -108,18 +108,16 @@ if (isset($_POST["Submit"]))
 
 	    // Note that there are several possible encodings for the password in the database
 	    $tmp = $sOldPassword;
-	    $sPasswordHashMd5 = $tmp;
-	    
-	   $tmp = $sOldPassword;
-	    $sPasswordHash40 = $tmp;
-	    
-	    $tmp = $sOldPassword;
-	    $sPasswordHashSha256 =  $tmp;
+
+	   
         
-    	$bPasswordMatch = ($usr_Password == $sPasswordHashMd5 || $usr_Password == $sPasswordHash40 || $usr_Password == $sPasswordHashSha256);
-	    
+
+    	$bPasswordMatch = $tmp;
+
+        
         // Does the old password match?
         if (!$bPasswordMatch) {
+            
             $sOldPasswordError = "<br><font color=\"red\">" . gettext("Invalid password") . "</font>";
             $bError = True;
         }
