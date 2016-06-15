@@ -1,0 +1,72 @@
+Financeiro
+
+Adicionar despesa
+
+Nota Fiscal/ Doc
+Fornecedor / Empresa
+Descrição
+Centro de custo
+tipo de despesa
+data vencimento
+tipo saída
+valor
+desconto
+juros
+valor total
+data pagamento
+forma pagamento
+comprovante ou Recibo upload
+foi recebido ?
+foi parcelado ?
+
+Entrada
+Nota fical/Doc
+membro
+descrição
+centro de custo
+data vencimento
+tipo receita
+valor
+data entrada
+forma pagamento
+foi recebido ?
+foi parcelado ?
+
+Adicionar Dízimo
+membro
+dia
+tipo dízimo
+obs
+valor
+data cadastro
+forma
+
+Adicionar Oferta
+dia
+tipo ofera
+obs
+valor
+forma
+conferente 1
+conferente 2
+data cadastro
+
+configurar tesouraria
+
+centro de custo
+tipo despesa
+tipo culto por ministério
+tipo patrimônio
+tipo receita
+tipo saída
+
+caixa
+saldo caixa local
+total receita
+total despesa
+saldo
+lançametos financeiros a fechar
+filtro
+mes
+data
+
