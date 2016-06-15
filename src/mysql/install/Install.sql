@@ -818,10 +818,12 @@ INSERT INTO `menuconfig_mcf` ( `name`, `parent`, `ismenu`, `content_english`, `c
 ('depositslip', 'deposit', 0, 'Edit Deposit Slip', 'Edit Deposit Slip', 'DepositSlipEditor.php', '', 'bFinance', 'iCurrentDeposit', 1, 1, 'DepositSlipID', 1, 5, NULL),
 
 ( 'financeiro', 'root', 1, 'Financeiro', 'Financeiro', '', 'Financeiro', 'bAll', NULL, 0, 0, NULL, 1, 2, 'fa-money'),
-( 'adicionarDespesa', 'financeiro', 0, 'Adicionar Despesa', 'Adicionar Despesa', 'work.php', '', 'bAddRecords', NULL, 0, 0, NULL, 1, 1, NULL),
-( 'adicionarEntrada', 'financeiro', 0, 'Adicionar Entrada', 'Adicionar Entrada', 'work.php', '', 'bAddRecords', NULL, 0, 0, NULL, 1, 2, NULL),
-( 'adicionarOferta', 'financeiro', 0, 'Adicionar Oferta', 'Adicionar Oferta', 'work.php', '', 'bAll', NULL, 0, 0, NULL, 1, 3, NULL),
-( 'lancamentos', 'financeiro', 0, 'Lançamentos', ' Lançamentos', 'work.php', '', 'bAddRecords', NULL, 0, 0, NULL, 1, 4, NULL),
+( 'caixa', 'financeiro', 0, 'Caixa', 'Caixa', 'Caixa.php', '', 'bAddRecords', NULL, 0, 0, NULL, 1, 1, NULL),
+( 'adicionarDespesa', 'financeiro', 0, 'Adicionar Despesa', 'Adicionar Despesa', 'AdicionarDespesa.php', '', 'bAddRecords', NULL, 0, 0, NULL, 1, 1, NULL),
+( 'adicionarEntrada', 'financeiro', 0, 'Adicionar Entrada', 'Adicionar Entrada', 'AdicionarEntrada.php', '', 'bAddRecords', NULL, 0, 0, NULL, 1, 2, NULL),
+( 'adicionarDízimo', 'financeiro', 0, 'Adicionar Dízimo', 'Adicionar Dízimo', 'AdiconarDízimo.php', '', 'bAll', NULL, 0, 0, NULL, 1, 3, NULL),
+( 'adicionarOferta', 'financeiro', 0, 'Adicionar Oferta', 'Adicionar Oferta', 'AdicionarOferta.php', '', 'bAll', NULL, 0, 0, NULL, 1, 3, NULL),
+( 'lancamentos', 'financeiro', 0, 'Lançamentos', ' Lançamentos', 'lancamentos.php', '', 'bAddRecords', NULL, 0, 0, NULL, 1, 4, NULL),
 
 
 ( 'properties', 'root', 1, 'Propriedades', 'Propriedades', '', '', 'bAll', NULL, 0, 0, NULL, 1, 10, 'fa-cogs'),
